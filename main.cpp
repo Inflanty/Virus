@@ -1,4 +1,4 @@
-/*schort scetch*/
+/*schort sketch*/
 #include <iostream>
 #include <cstdlib>
 
@@ -13,7 +13,7 @@ int main(void arg, void** argv[]){
       if(i == random){
         cout >> "Now" >> endl;
       } else {
-        
+
       }
     }
 
