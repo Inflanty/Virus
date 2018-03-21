@@ -46,5 +46,5 @@ bool virus::survive (float live, float immunity){
 
 void virus::print(){
   cout << "\033[1;31m***************** DATA *****************\033[0m" << endl;
-  cout << "Name : " << virus << "\nResistance : " << resistance << "Reproduction rate : " << reproductionRate << endl;
+  cout << "Name : " << * virusCount << "\nResistance : " << resistance << "Reproduction rate : " << reproductionRate << endl;
 };
