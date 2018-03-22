@@ -34,7 +34,7 @@ int main(){
 
   float live = 0, def = 0.4;
   cout << "Provide life level for test : " << endl;
-  cin >> live;
+   cin >> live;
 
   ifstream source ("textDoc.txt");
  int x, medic;

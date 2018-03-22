@@ -19,7 +19,7 @@ class virus {
 public:
     float reproductionRate;    // rate of reproduction, in 0-1
     float resistance;          // resistance against drugs, in 0-1
-    float defaultReproductionRate = 0.1;
+    float defaultReproductionRate;  //float defaultReproductionRate = 0.1;
     double live;
     int number;
     // for future : make global array with names and numbers of objects, to provide name for internal use.
@@ -44,6 +44,7 @@ virus::virus (float newResistance, int * virusCount){
    number = *virusCount;
    *virusCount += 1;
    live = 1;
+   defaultReproductionRate = 0.1;
 };
 
 virus::virus (float newReproductionRate, float newResistance, int * virusCount){
@@ -53,6 +54,7 @@ virus::virus (float newReproductionRate, float newResistance, int * virusCount){
    number = *virusCount;
    *virusCount += 1;
    live = 1;
+   defaultReproductionRate = 0.1;
 };
 
 virus::virus (virus &existing, int * virusCount){
@@ -62,6 +64,7 @@ virus::virus (virus &existing, int * virusCount){
   number = *virusCount;
   *virusCount += 1;
   live = 1;
+  defaultReproductionRate = 0.1;
 };
 
 virus::~virus (){
@@ -88,6 +91,7 @@ void virus::print(){
 void virus::fight(double fightTime){
   if (fightTime <= 1){
     live = 1 - pow(fightTime, 2.0);
+    cout << "\n::Actual live:: " << live; 
   }
   //virusLive = 1 - pow(fightTime, 2.0);
 };
