@@ -89,9 +89,11 @@ void virus::print(){
 };
 
 void virus::fight(double fightTime){
-  if (fightTime <= 1){
+  if (fightTime <= 1 && live != 0){
     live = 1 - pow(fightTime, 2.0);
-    cout << "\n::Actual live:: " << live; 
+    cout << "\n::Actual live:: " << live;
+  }else if(live == 0){
+    this->~virus();
   }
   //virusLive = 1 - pow(fightTime, 2.0);
 };
