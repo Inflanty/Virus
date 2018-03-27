@@ -33,7 +33,7 @@ public:
 
     void survive(float immunity);
     float get(){return reproductionRate;};
-    void fight(double fightTime);
+    double fight(double fightTime);
     void print();
 };
 
@@ -88,27 +88,65 @@ void virus::print(){
   cout << "Number : "<< number <<"\nResistance : " << resistance << "\nReproduction rate : " << reproductionRate << "\nVirus LIVE : " << live << endl;
 };
 
-void virus::fight(double fightTime){
+double virus::fight(double fightTime){
   if (fightTime <= 1 && live != 0){
     live = 1 - pow(fightTime, 2.0);
     cout << "\n::Actual live:: " << live;
   }else if(live == 0){
     this->~virus();
   }
-  //virusLive = 1 - pow(fightTime, 2.0);
+  return live;
 };
 
 class citizen {
   int age;
+  double level;
+  double illness;
   char gender;
-  char illness;
-  char symptoms;
+
+  citizens();
+  ~citizens();
+  double infections(double virus_force);
+  double live (double level);
 };
 
-class doctor {
+double citizen::infection(double virus_force){
+
+  return illness;
+};
+
+double citizen::live (double illness){
+
+  return level
+};
+
+class doctor : public citizen {
   int skills;
   int expirience;
   int availability;
+  char knowledge[skills];
+
+  doctor();
+  ~doctor();
+  double treatment();
+};
+
+bool doctor::treatment(char symptom){
+  for(int i = 0; i < skills; i++){
+    if(knowledge[i] == symptom){
+      return 1;
+    }else{
+      ;
+    }
+  }
+  return 0;
+}//make knowledge .csv base ? 
+
+class patient : public citizen {
+  char symptoms;
+
+  patient();
+  ~patient();
 };
 /*
 class dataBase {
